@@ -4,14 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What Does Spring Look Like?</title>
+
 <style>
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; overflow: hidden; }
-body { font-family: "DM Sans", Arial, sans-serif; }
-.scene { position: relative; height: 100vh; overflow: hidden; background: #263329; }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.scene {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #263329;
+}
+
 .scene-image {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -19,7 +34,17 @@ body { font-family: "DM Sans", Arial, sans-serif; }
   cursor: pointer;
   background: center / cover no-repeat;
 }
-.scene-image::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.12); }
+
+.scene-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.12);
+}
+
 .center-button {
   position: absolute;
   z-index: 2;
@@ -44,11 +69,15 @@ body { font-family: "DM Sans", Arial, sans-serif; }
   text-align: center;
   cursor: pointer;
 }
-.center-button:focus-visible { outline: 4px solid #263329; outline-offset: 6px; }
-.home-link {
+
+.center-button:focus-visible {
+  outline: 4px solid #263329;
+  outline-offset: 6px;
+}
+
+.home-link, .look-link {
   position: absolute;
   z-index: 3;
-  left: 24px;
   bottom: 24px;
   padding: 10px 20px;
   border: 1px solid rgba(255,249,242,.9);
@@ -59,34 +88,59 @@ body { font-family: "DM Sans", Arial, sans-serif; }
   text-decoration: none;
   backdrop-filter: blur(5px);
 }
+
+.home-link {
+  left: 24px;
+}
+
+.look-link {
+  left: 50%;
+  transform: translateX(-50%);
+}
 </style>
 </head>
+
 <body>
 <main class="scene">
-  <button class="scene-image" id="sceneImage" type="button" aria-label="Show the next spring photograph"></button>
-  <button class="center-button" id="sceneTitle" type="button">Blooming Flowers</button>
+
+  <button class="scene-image" id="sceneImage" type="button"></button>
+
+  <button class="center-button" id="sceneTitle" type="button">
+    Blooming Flowers
+  </button>
+
   <a class="home-link" href="index.html">Home</a>
+
+  <a class="look-link" href="page3.html">What does spring look like?</a>
+
 </main>
+
 <script>
 const scenes = [
-  { image: "images/bloomingflowers.jpg", title: "Blooming Flowers" },
-  { image: "images/freshgreenleaves.jpg", title: "Fresh Green Leaves" },
-  { image: "images/brightsunlight.jpg", title: "Brighter Sunlight" },
-  { image: "images/colorfulnature.jpg", title: "Colorful Nature" }
+  { image: "bloomingflowers.jpg", title: "Blooming Flowers" },
+  { image: "freshgreenleaves.jpg", title: "Fresh Green Leaves" },
+  { image: "brightsunlight.jpg", title: "Brighter Sunlight" },
+  { image: "colorfulnature.jpg", title: "Colorful Nature" }
 ];
+
 let current = 0;
+
 const image = document.getElementById("sceneImage");
 const title = document.getElementById("sceneTitle");
+
 function showScene() {
-  image.style.backgroundImage = `url("${scenes[current].image}")`;
+  image.style.backgroundImage = "url('" + scenes[current].image + "')";
   title.textContent = scenes[current].title;
 }
+
 function nextScene() {
   current = (current + 1) % scenes.length;
   showScene();
 }
+
 image.addEventListener("click", nextScene);
 title.addEventListener("click", nextScene);
+
 showScene();
 </script>
 </body>
