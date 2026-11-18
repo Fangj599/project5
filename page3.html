@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Does Spring Look Like?</title>
+<style>
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; }
+body { overflow: hidden; background: #fff9f2; }
+.gallery {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+.gallery img { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; }
+.home-link {
+  position: fixed;
+  z-index: 2;
+  left: 24px;
+  bottom: 24px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255,249,242,.9);
+  border-radius: 999px;
+  color: #fff9f2;
+  background: rgba(0,0,0,.42);
+  font: 16px "DM Sans", Arial, sans-serif;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<main class="gallery">
+  <img src="images/bloomingflowers.jpg" alt="Blooming flowers">
+  <img src="images/freshgreenleaves.jpg" alt="Fresh green leaves">
+  <img src="images/brightsunlight.jpg" alt="Brighter sunlight">
+  <img src="images/colorfulnature.jpg" alt="Colorful nature">
+</main>
+<a class="home-link" href="index.html">Home</a>
+</body>
+</html>
