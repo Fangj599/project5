@@ -16,11 +16,11 @@ body {
 }
 
 .home {
-  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   color: #fff9f2;
   background: url("homepage.jpg") center / cover no-repeat;
 }
@@ -43,7 +43,7 @@ body {
 }
 
 h1 {
-  margin: 0 0 38px;
+  margin: 0 0 45px;
   font-family: "Fraunces", Georgia, serif;
   font-size: clamp(64px, 8vw, 112px);
   line-height: .98;
@@ -56,18 +56,17 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-.links a, .bottom-link {
+.links a {
   min-width: 270px;
-  padding: 11px 28px;
+  padding: 14px 28px;
   border: 1.5px solid rgba(255,249,242,.9);
   border-radius: 999px;
   color: #fff9f2;
   background: rgba(255,249,242,.12);
-  font-size: clamp(18px, 1.6vw, 23px);
-  line-height: 1.2;
+  font-size: 23px;
   text-decoration: none;
 }
 
@@ -76,7 +75,7 @@ h1 {
   padding: 19px 34px;
   border-width: 3px;
   background: rgba(255,249,242,.28);
-  font-size: clamp(30px, 3vw, 42px);
+  font-size: 42px;
   font-weight: 700;
 }
 
@@ -85,7 +84,13 @@ h1 {
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
+  padding: 11px 28px;
+  border: 1.5px solid rgba(255,249,242,.9);
+  border-radius: 999px;
+  color: #fff9f2;
+  background: rgba(255,249,242,.12);
+  font-size: 21px;
+  text-decoration: none;
 }
 </style>
 </head>
@@ -98,13 +103,9 @@ h1 {
     <nav class="links">
       <a class="large" href="page2.html">Seeing Spring</a>
       <a href="#">Sound</a>
-      <a href="#">Scent</a>
-      <a href="#">Taste</a>
-      <a href="#">Feel</a>
     </nav>
   </div>
 
-  
   <a class="bottom-link" href="page3.html">What does spring look like?</a>
 </main>
 </body>
